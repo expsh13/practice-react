@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from "react";
 import logo from './logo.svg';
 import './App.css';
 
@@ -13,7 +13,13 @@ function App() {
 }
 
 function LikeBtn() {
-  return <span>good btnがここにできる</span>;
+  const [count, setCount] = useState(1);
+  
+  const handleClick = () => {
+    setCount(count + 1);
+  }
+  
+  return <span className='LikeBtn' onClick={handleClick}>🖤 {count}</span>;
 }
 
 export default App;
