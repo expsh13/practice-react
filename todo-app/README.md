@@ -1,6 +1,3 @@
-# 参考URL
-https://www.hypertextcandy.com/react-tutorial-05-wrap-up-with-todo-app
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
