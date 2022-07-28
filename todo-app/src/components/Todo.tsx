@@ -1,5 +1,6 @@
 import React from 'react';
 import { TodoItem } from './TodoItem';
+import { Input } from './Input';
 
 
 export function Todo() {
@@ -11,6 +12,10 @@ export function Todo() {
     { key: getKey(), text: 'Learn React', done: false },
     { key: getKey(), text: 'Get some good sleep', done: false },
   ]);
+
+  const handleAdd = text => {
+    setItems([...items, { key: getKey(), text, done: false }]);
+  };
 
   const handleCheck = (checked:any) => {
     console.log('各アイテムがクリックされた時に動く関数')
@@ -30,6 +35,7 @@ export function Todo() {
       <div className="panel-heading">
         ⚛️ React ToDo
       </div>
+      <Input onAdd={handleAdd} />
       {items.map(item => (
         <TodoItem 
           key={item.key} 
