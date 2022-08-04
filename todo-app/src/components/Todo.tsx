@@ -1,6 +1,7 @@
 import React from 'react';
 import { TodoItem } from './TodoItem';
 import { Input } from './Input';
+import { Filter } from './Filter';
 import { text } from 'stream/consumers';
 
 
@@ -13,6 +14,16 @@ export function Todo() {
     { key: getKey(), text: 'Learn React', done: false },
     { key: getKey(), text: 'Get some good sleep', done: false },
   ]);
+
+  const [filter, setFilter] = React.useState('ALL');
+
+  const handleFilterChange = (value:any) => setFilter(value);
+
+  const displayItems = items.filter(item => {
+    if (filter === 'ALL') return true;
+    if (filter === 'TODO') return !item.done;
+    if (filter === 'DONE') return item.done;
+  });
 
   const handleAdd = (txt:any) => {
     // スプレッド構文
@@ -39,6 +50,10 @@ export function Todo() {
         ⚛️ React ToDo
       </div>
       <Input onAdd={handleAdd} />
+      <Filter
+        onChange={handleFilterChange}
+        value={filter}
+      />
       {items.map(item => (
         <TodoItem 
           key={item.key} 
@@ -47,7 +62,7 @@ export function Todo() {
         />
       ))}
       <div className="panel-block">
-        {items.length} items
+        {displayItems.length} items
       </div>
     </div>
   );
