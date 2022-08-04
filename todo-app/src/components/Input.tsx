@@ -1,7 +1,8 @@
 import React from "react";
 
-export function Input() {
+export function Input( onAdd:any ) {
   const [text, setText] = React.useState('');
+
   const handleChange = (e:any) => {
     console.log(e.target.value);
     setText(e.target.value);
@@ -9,7 +10,7 @@ export function Input() {
 
   const handleKeyDown = (e:any) => {
     if (e.key === 'Enter') {
-      onAdd(text);
+      onAdd.onAdd(text);
       setText('');
     }
   };

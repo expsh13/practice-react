@@ -1,6 +1,7 @@
 import React from 'react';
 import { TodoItem } from './TodoItem';
 import { Input } from './Input';
+import { text } from 'stream/consumers';
 
 
 export function Todo() {
@@ -13,8 +14,10 @@ export function Todo() {
     { key: getKey(), text: 'Get some good sleep', done: false },
   ]);
 
-  const handleAdd = text => {
-    setItems([...items, { key: getKey(), text, done: false }]);
+  const handleAdd = (txt:any) => {
+    // スプレッド構文
+    setItems([...items, { key: getKey(), text: txt, done: false }]);
+    // console.log(txt);
   };
 
   const handleCheck = (checked:any) => {
@@ -25,7 +28,7 @@ export function Todo() {
         item.done = !item.done;
       }
       return item;
-    });
+    }); 
     setItems(newItems);
   };
 
