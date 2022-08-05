@@ -1,3 +1,6 @@
+最後のfileterだけわからんかった
+https://www.hypertextcandy.com/react-tutorial-05-wrap-up-with-todo-app#%E5%AE%8C%E6%88%90%E3%82%B3%E3%83%BC%E3%83%89
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

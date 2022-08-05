@@ -12,12 +12,12 @@ export function Filter({ value, onChange }:any) {
     <div className="panel-tabs">
       <a
         href="#"
-        onClick={handleClick.bind(null, 'ALL')}
+        onClick={() => handleClick('ALL')}
         className={classNames({ 'is-active': value === 'ALL' })}
       >All</a>
       <a
         href="#"
-        onClick={handleClick.bind(null, 'TODO')}
+        onClick={() => handleClick('TODO')}
         className={classNames({ 'is-active': value === 'TODO' })}
       >ToDo</a>
       <a
